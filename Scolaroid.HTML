@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholaroid - Capture Your Learning Journey</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom color for the brand */
+        .bg-deep-blue { background-color: #0A2342; } /* A deep, scholarly blue */
+        .text-gold-accent { color: #D4AF37; } /* A subtle gold */
+        .bg-gold-accent { background-color: #D4AF37; }
+        .hover\:bg-gold-hover:hover { background-color: #C09E31; }
+        
+        .text-teal-accent { color: #14B8A6; } /* A subtle teal */
+        .bg-teal-accent { background-color: #14B8A6; }
+        .hover\:bg-teal-hover:hover { background-color: #0F766E; }
+
+        /* Polaroid styling */
+        .polaroid {
+            background: #fff;
+            padding: 1rem;
+            padding-bottom: 2.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-radius: 0.25rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .polaroid:hover {
+            transform: translateY(-5px) rotate(1deg);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+        .polaroid img {
+            border: 1px solid #eee;
+        }
+        .polaroid-caption {
+            position: absolute;
+            bottom: 0.75rem;
+            left: 1rem;
+            right: 1rem;
+            text-align: center;
+            font-size: 0.875rem;
+            color: #333;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <!-- 0. Header / Navigation -->
+    <header class="bg-white/90 backdrop-blur-sm sticky top-0 z-50 shadow-sm border-b border-gray-200">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Brand Name -->
+            <a href="#" class="text-3xl font-extrabold text-deep-blue">
+                Scholaroid
+            </a>
+            
+            <!-- Navigation Links -->
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#about" class="text-gray-600 hover:text-deep-blue transition duration-300">About</a>
+                <a href="#courses" class="text-gray-600 hover:text-deep-blue transition duration-300">Courses</a>
+                <a href="#why-us" class="text-gray-600 hover:text-deep-blue transition duration-300">Why Us</a>
+                <a href="#moments" class="text-gray-600 hover:text-deep-blue transition duration-300">Moments</a>
+                <a href="#contact" class="text-gray-600 hover:text-deep-blue transition duration-300">Contact</a>
+            </div>
+            
+            <!-- CTA Button -->
+            <a href="#cta" class="hidden md:inline-block bg-teal-accent text-white font-medium px-5 py-2 rounded-lg shadow-md hover:bg-teal-hover transition duration-300">
+                Enroll Now
+            </a>
+            
+            <!-- Mobile Menu Button (Simple) -->
+            <button class="md:hidden text-deep-blue">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 1. Hero Section -->
+        <section class="bg-deep-blue text-white py-24 md:py-32">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
+                    Capture Your Learning Journey with Scholaroid.
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-10">
+                    Prepare for IAT, NEST, ISI, CMI & Research Olympiads with expert guidance.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                    <a href="#courses" class="bg-teal-accent text-white font-semibold px-8 py-3 rounded-lg shadow-lg text-lg hover:bg-teal-hover transition duration-300">
+                        Start Learning
+                    </a>
+                    <a href="#courses" class="bg-white text-deep-blue font-semibold px-8 py-3 rounded-lg shadow-lg text-lg hover:bg-gray-100 transition duration-300">
+                        Explore Courses
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. About Scholaroid -->
+        <section id="about" class="py-20 md:py-28 bg-gray-50">
+            <div class="container mx-auto px-6 text-center max-w-4xl">
+                <h2 class="text-sm font-semibold text-teal-accent uppercase tracking-wider mb-2">About Scholaroid</h2>
+                <p class="text-3xl md:text-4xl font-bold text-deep-blue mb-6">
+                    Our mission is to shape scholars, thinkers, and problem solvers.
+                </p>
+                <p class="text-lg text-gray-600 leading-relaxed">
+                    Scholaroid is a platform that captures and nurtures the journey of young scholars. We blend premium learning, deep concept understanding, and research-driven education.
+                </p>
+                <p class="text-2xl font-medium italic text-deep-blue mt-8">
+                    “Every scholar has a story. We help you create yours.”
+                </p>
+            </div>
+        </section>
+
+        <!-- 3. Courses Offered -->
+        <section id="courses" class="py-20 md:py-28">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-deep-blue text-center mb-12">
+                    Courses We Offer
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Course Card 1 -->
+                    <div class="bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300">
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-deep-blue mb-3">IAT / IISER Aptitude Test</h3>
+                            <p class="text-gray-600 mb-6">Comprehensive preparation for all sections of the IISER Aptitude Test (IAT).</p>
+                            <a href="#" class="font-medium text-teal-accent hover:text-teal-600 transition duration-300">Learn More &rarr;</a>
+                        </div>
+                    </div>
+                    <!-- Course Card 2 -->
+                    <div class="bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300">
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-deep-blue mb-3">NEST (NISER & CEBS)</h3>
+                            <p class="text-gray-600 mb-6">Dedicated coaching for the National Entrance Screening Test (NEST).</p>
+                            <a href="#" class="font-medium text-teal-accent hover:text-teal-600 transition duration-300">Learn More &rarr;</a>
+                        </div>
+                    </div>
+                    <!-- Course Card 3 -->
+                    <div class="bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300">
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-deep-blue mb-3">ISI & CMI Entrances</h3>
+                            <p class="text-gray-600 mb-6">Master advanced mathematics for the ISI and CMI entrance examinations.</p>
+                            <a href="#" class="font-medium text-teal-accent hover:text-teal-600 transition duration-300">Learn More &rarr;</a>
+                        </div>
+                    </div>
+                    <!-- Course Card 4 -->
+                    <div class="bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300">
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-deep-blue mb-3">Olympiads & Research</h3>
+                            <p class="text-gray-600 mb-6">Guidance for KVPY, Math, Physics, and Chemistry Olympiads.</p>
+                            <a href="#" class="font-medium text-teal-accent hover:text-teal-600 transition duration-300">Learn More &rarr;</a>
+                        </div>
+                    </div>
+                    <!-- Course Card 5 -->
+                    <div class="bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300">
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-deep-blue mb-3">Foundation (9–12)</h3>
+                            <p class="text-gray-600 mb-6">Build a strong conceptual base in Science and Math from Class 9 onwards.</p>
+                            <a href="#" class="font-medium text-teal-accent hover:text-teal-600 transition duration-300">Learn More &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Why Scholaroid? -->
+        <section id="why-us" class="py-20 md:py-28 bg-deep-blue text-white">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <!-- Left Side: Title -->
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                            Why Choose Scholaroid?
+                        </h2>
+                        <p class="text-lg text-gray-300 leading-relaxed">
+                            We focus on deep understanding and mentorship, not just rote learning. Our approach is designed to build true scholars.
+                        </p>
+                    </div>
+                    
+                    <!-- Right Side: Features -->
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <span class="text-2xl text-teal-accent">✔</span>
+                            <div>
+                                <h3 class="text-xl font-semibold">Concept-Based Learning</h3>
+                                <p class="text-gray-300">Move beyond formulas to truly understand the 'why' behind every concept.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <span class="text-2xl text-teal-accent">✔</span>
+                            <div>
+                                <h3 class="text-xl font-semibold">Scholar Mentoring</h3>
+                                <p class="text-gray-300">Learn from and interact with alumni and scholars from IISER, IIT, & ISI.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <span class="text-2xl text-teal-accent">✔</span>
+                            <div>
+                                <h3 class="text-xl font-semibold">Research-Oriented Problems</h3>
+                                <p class="text-gray-300">Tackle unique problems that develop your research aptitude and thinking skills.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <span class="text-2xl text-teal-accent">✔</span>
+                            <div>
+                                <h3 class="text-xl font-semibold">Performance Tracking</h3>
+                                <p class="text-gray-300">Detailed mock tests and analysis to pinpoint your strengths and weaknesses.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <span class="text-2xl text-teal-accent">✔</span>
+                            <div>
+                                <h3 class="text-xl font-semibold">Community & Doubt-Solving</h3>
+                                <p class="text-gray-300">Join a network of curious minds with 24/7 doubt-solving support.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. "Captured Moments" Section -->
+        <section id="moments" class="py-20 md:py-28 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-deep-blue text-center mb-12">
+                    Captured Moments
+                </h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Polaroid 1 -->
+                    <div class="polaroid">
+                        <img src="https://placehold.co/400x300/0A2342/FFFFFF?text=IAT+2024+Topper" alt="IAT Topper" class="w-full h-auto rounded-sm">
+                        <p class="polaroid-caption">Aarav S. - IAT 2024 Topper</p>
+                    </div>
+                    <!-- Polaroid 2 -->
+                    <div class="polaroid" style="transform: rotate(-2deg);">
+                        <img src="https://placehold.co/400x300/14B8A6/FFFFFF?text=Live+Workshop" alt="Live Workshop" class="w-full h-auto rounded-sm">
+                        <p class="polaroid-caption">Live Q&A with IISER Pune Alumni</p>
+                    </div>
+                    <!-- Polaroid 3 -->
+                    <div class="polaroid" style="transform: rotate(1.5deg);">
+                        <img src="https://placehold.co/400x300/0A2342/FFFFFF?text=Problem+Solved" alt="Problem Solved" class="w-full h-auto rounded-sm">
+                        <p class="polaroid-caption">ISI Math Problem - Solved!</p>
+                    </div>
+                    <!-- Polaroid 4 -->
+                    <div class="polaroid" style="transform: rotate(-1deg);">
+                        <img src="https://placehold.co/400x300/14B8A6/FFFFFF?text=Community+Meetup" alt="Community Meetup" class="w-full h-auto rounded-sm">
+                        <p class="polaroid-caption">Online Community Meetup</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Testimonials / Scholar Stories -->
+        <section id="testimonials" class="py-20 md:py-28">
+            <div class="container mx-auto px-6 max-w-5xl">
+                <h2 class="text-3xl md:text-4xl font-bold text-deep-blue text-center mb-12">
+                    Scholar Stories
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-lg">
+                        <p class="text-gray-600 italic text-lg mb-6">
+                            "The mentor sessions at Scholaroid were a game-changer. Speaking directly to someone who has cleared ISI gave me the exact strategy and confidence I needed."
+                        </p>
+                        <div class="flex items-center">
+                            <img src="https://placehold.co/100x100/0A2342/FFFFFF?text=R" alt="Priya K." class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <p class="font-bold text-deep-blue">Priya K.</p>
+                                <p class="text-sm text-gray-500">Admitted to CMI, 2024</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-lg">
+                        <p class="text-gray-600 italic text-lg mb-6">
+                            "I loved the research-oriented problems. They were challenging and completely different from standard coaching. It really prepared me for the NEST exam."
+                        </p>
+                        <div class="flex items-center">
+                            <img src="https://placehold.co/100x100/14B8A6/FFFFFF?text=M" alt="Mohit R." class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <p class="font-bold text-deep-blue">Mohit R.</p>
+                                <p class="text-sm text-gray-500">Admitted to NISER, 2024</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. CTA Section -->
+        <section id="cta" class="py-20 md:py-28 bg-deep-blue text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-5xl font-extrabold mb-6">
+                    Begin your Scholaroid journey today.
+                </h2>
+                <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-10">
+                    Join our community of scholars and get the expert guidance you need to succeed.
+                </p>
+                <a href="#courses" class="bg-teal-accent text-white font-semibold px-10 py-4 rounded-lg shadow-lg text-xl hover:bg-teal-hover transition duration-300">
+                    Enroll Now
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- 8. Footer -->
+    <footer id="contact" class="bg-gray-900 text-gray-300 py-16">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- Brand & Socials -->
+            <div>
+                <a href="#" class="text-3xl font-extrabold text-white mb-4 block">
+                    Scholaroid
+                </a>
+                <p class="text-gray-400 mb-4">Capture your learning journey.</p>
+                <div class="flex space-x-4">
+                    <!-- Social Icons (simple text for now) -->
+                    <a href="#" class="text-gray-400 hover:text-white">YouTube</a>
+                    <a href="#" class="text-gray-400 hover:text-white">Instagram</a>
+                    <a href="#" class="text-gray-400 hover:text-white">LinkedIn</a>
+                </div>
+            </div>
+            
+            <!-- Quick Links -->
+            <div>
+                <h4 class="font-semibold text-white text-lg mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="#about" class="hover:text-white">About Us</a></li>
+                    <li><a href="#courses" class="hover:text-white">Courses</a></li>
+                    <li><a href="#moments" class="hover:text-white">Moments</a></li>
+                    <li><a href="#" class="hover:text-white">Blog</a></li>
+                </ul>
+            </div>
+            
+            <!-- Legal -->
+            <div>
+                <h4 class="font-semibold text-white text-lg mb-4">Legal</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-white">Terms of Service</a></li>
+                </ul>
+            </div>
+            
+            <!-- Contact -->
+            <div>
+                <h4 class="font-semibold text-white text-lg mb-4">Contact</h4>
+                <ul class="space-y-2">
+                    <li><a href="mailto:hello@scholaroid.com" class="hover:text-white">hello@scholaroid.com</a></li>
+                    <!-- Add phone or address if needed -->
+                </ul>
+            </div>
+        </div>
+        <div class="text-center text-gray-500 mt-12 border-t border-gray-700 pt-8">
+            &copy; 2025 Scholaroid. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
